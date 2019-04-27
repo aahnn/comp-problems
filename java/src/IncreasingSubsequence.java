@@ -43,13 +43,13 @@ public class IncreasingSubsequence {
                         StringBuilder rightMoves = new StringBuilder("R");
                         int numRight = 1;
                         prev = s[left];
-                        while (s[left + numLeft] > prev) {
+                        while (left + numLeft < s.length && s[left + numLeft] > prev) {
                             leftMoves.append("L");
                             prev = s[left + numLeft];
                             numLeft++;
                         }
                         prev = s[right];
-                        while (s[right - numRight] > prev) {
+                        while (right - numRight >= 0 && s[right - numRight] > prev) {
                             rightMoves.append("R");
                             prev = s[right - numRight];
                             numRight++;
